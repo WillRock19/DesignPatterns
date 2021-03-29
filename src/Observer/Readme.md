@@ -26,6 +26,12 @@ In a given interval, the program will load the weather informations using the **
 is different from the information contained in the **WheatherDataService**, the **WheatherDataService** will warn all the observers 
 that are subscribed to it, and then they will print the new information in the console. 
 
+###The **Data** folder
+
+It contains a JSON where the data information is stored. The program get it's data from this json; when executing the program, you can
+change the json in the output folder from build (something like **\bin\Debug\netcoreapp3.1\Data**) and change it there; the program then
+will load the changes and make what is necessary to display it in console (to see more how this works, read the session above).
+
 ###Classes
 
 ####WheatherDataService
