@@ -7,7 +7,7 @@
 We have two types of object here: the SUBJECTS, that has some data that may change, and the OBSERVER, that subscribe to a subject and
 must be alerted if any of the data on it changes.
 
-###Interest to consider
+###Considerations
 
 We could have many observers, each one responsible for displaying the information in different ways. Since the observable is responsible
 for instantiating the subjects, the choices we make only will consume it.

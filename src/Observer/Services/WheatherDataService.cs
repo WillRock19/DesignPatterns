@@ -7,11 +7,18 @@ namespace Observer.Services
     public class WheatherDataService : ISubject
     {
         private readonly List<IObserver> _observers;
+        private readonly IWheaterGetterService _wheaterGetterService;
+        private readonly TimerService _timerService;
+
         private MeteorologicData _currentMeteorologicData;
 
-        public WheatherDataService()
+        public WheatherDataService(IWheaterGetterService wheaterGetterService, TimerService timerService)
         {
+            _timerService = timerService;
             _observers = new List<IObserver>();
+            _wheaterGetterService = wheaterGetterService;
+
+            SetTimer();
         }
 
         public void RegisterObserver(IObserver observer)
@@ -30,9 +37,10 @@ namespace Observer.Services
 
         public void NotifyObservers()
         {
-            var data = GetUpdatedMeteorologicData();
+            var data = _wheaterGetterService
+                .GetCurrentWheaterInformation();
 
-            if (_currentMeteorologicData.IsSameAs(data))
+            if (_currentMeteorologicData != null && _currentMeteorologicData.IsSameAs(data))
                 return;
 
             _currentMeteorologicData = data;
@@ -41,9 +49,11 @@ namespace Observer.Services
                 observer.Update(_currentMeteorologicData));
         }
 
-        private MeteorologicData GetUpdatedMeteorologicData() 
+        private void SetTimer() 
         {
-            return null;
+            _timerService
+                .ExecuteActionAfterInterval(NotifyObservers)
+                .Start();
         }
     }
 }

@@ -4,7 +4,7 @@ using System;
 
 namespace Observer.Services
 {
-    class CurrentConditionsDisplayService : IObserver
+    class CurrentConditionsDisplayService : IObserver, IDisplayElement
     {
         public Guid Identifier => _identifier;
         
@@ -15,12 +15,13 @@ namespace Observer.Services
         {
             _identifier = Guid.NewGuid();
             _wheatherData = wheatherData;
-
             _wheatherData.RegisterObserver(this);
         }
 
         public void Update(MeteorologicData meteorologicData)
         {
+            Console.WriteLine("=========================================");
+            Console.WriteLine("The weather information has been Updated!");
             Display(meteorologicData);
         }
 
