@@ -6,6 +6,6 @@ namespace Observer.Interfaces
     public interface IObserver
     {
         Guid Identifier { get; }
-        void Update(MeteorologicData meteorologicData);
+        void Update(CurrentWeatherData meteorologicData);
     }
 }

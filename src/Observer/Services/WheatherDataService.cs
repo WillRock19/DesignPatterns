@@ -10,7 +10,7 @@ namespace Observer.Services
         private readonly IWheaterGetterService _wheaterGetterService;
         private readonly TimerService _timerService;
 
-        private MeteorologicData _currentMeteorologicData;
+        private CurrentWeatherData _currentMeteorologicData;
 
         public WheatherDataService(IWheaterGetterService wheaterGetterService, TimerService timerService)
         {
@@ -18,7 +18,7 @@ namespace Observer.Services
             _observers = new List<IObserver>();
             _wheaterGetterService = wheaterGetterService;
 
-            SetTimer();
+            SetTimerToCheckForDataUpdates();
         }
 
         public void RegisterObserver(IObserver observer)
@@ -49,7 +49,7 @@ namespace Observer.Services
                 observer.Update(_currentMeteorologicData));
         }
 
-        private void SetTimer() 
+        private void SetTimerToCheckForDataUpdates() 
         {
             _timerService
                 .ExecuteActionAfterInterval(NotifyObservers)

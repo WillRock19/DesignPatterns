@@ -1,19 +1,41 @@
-﻿using Observer.Domain;
+﻿using Microsoft.Extensions.Configuration;
+using Observer.Domain;
 using Observer.Interfaces;
 using System;
+using System.IO;
+using System.Text.Json;
 
 namespace Observer.Services
 {
     public class WheaterGetterService : IWheaterGetterService
     {
-        public MeteorologicData GetCurrentWheaterInformation()
+        private readonly string _dataPath;
+
+        public WheaterGetterService(IConfigurationRoot configurations)
         {
-            return new MeteorologicData 
+            _dataPath = configurations
+                .GetSection("weatherData")
+                .GetSection("path").Value;
+        }
+
+        public CurrentWeatherData GetCurrentWheaterInformation()
+        {
+            var weatherData = LoadWeatherData();
+            return weatherData.CurrentWeather;
+        }
+
+        private MeteorologicData LoadWeatherData() 
+        {
+            try 
             {
-                Humidity = 19,
-                Pressure = 88,
-                Temperature = 34
-            };
+                using var stream = new StreamReader(Path.Combine(Directory.GetCurrentDirectory(), _dataPath));
+                var json = stream.ReadToEnd();
+                return JsonSerializer.Deserialize<MeteorologicData>(json);
+            }
+            catch(Exception e)
+            {
+                throw new FileLoadException("The program could not load the weatherdata informations!", e);
+            }
         }
     }
 }

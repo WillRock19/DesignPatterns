@@ -4,6 +4,6 @@ namespace Observer.Interfaces
 {
     public interface IWheaterGetterService
     {
-        MeteorologicData GetCurrentWheaterInformation();
+        CurrentWeatherData GetCurrentWheaterInformation();
     }
 }

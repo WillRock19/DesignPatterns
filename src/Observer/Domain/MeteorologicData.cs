@@ -2,13 +2,6 @@
 {
     public class MeteorologicData
     {
-        public float Temperature { get; set; }
-        public float Humidity { get; set; }
-        public float Pressure { get; set; }
-
-        public bool IsSameAs(MeteorologicData otherData) =>
-            Temperature == otherData.Temperature 
-         && Humidity == otherData.Humidity 
-         && Pressure == otherData.Pressure;
+        public CurrentWeatherData CurrentWeather { get; set; }
     }
 }

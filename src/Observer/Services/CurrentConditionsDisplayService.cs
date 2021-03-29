@@ -18,14 +18,14 @@ namespace Observer.Services
             _wheatherData.RegisterObserver(this);
         }
 
-        public void Update(MeteorologicData meteorologicData)
+        public void Update(CurrentWeatherData meteorologicData)
         {
             Console.WriteLine("=========================================");
             Console.WriteLine("The weather information has been Updated!");
             Display(meteorologicData);
         }
 
-        public void Display(MeteorologicData meteorologicData) 
+        public void Display(CurrentWeatherData meteorologicData) 
         {
             Console.WriteLine("Current conditions are: ");
             Console.WriteLine($"-> Atmosferic Pressure: {meteorologicData.Pressure}");

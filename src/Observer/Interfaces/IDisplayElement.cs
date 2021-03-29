@@ -4,6 +4,6 @@ namespace Observer.Interfaces
 {
     public interface IDisplayElement
     {
-        void Display(MeteorologicData meteorologicData);
+        void Display(CurrentWeatherData meteorologicData);
     }
 }
