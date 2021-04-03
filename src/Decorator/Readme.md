@@ -98,7 +98,7 @@ it's own costs and values.
 
 ###How does the program works
 
-
+When you run the program, it shows an menu of coffees that a company sells, each one created using the decorator design pattern.
 
 
 ###Classes

@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Observer.Tests.Integration"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator", "src\Decorator\Decorator.csproj", "{9C9C832E-3806-47F7-AAC9-378CCB6FF17F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decorator.Tests.Unit", "tests\Decorator.Tests.Unit\Decorator.Tests.Unit.csproj", "{51D09F53-A84B-41D2-9FDE-9AFED91F872D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Decorator.Tests.Unit", "tests\Decorator.Tests.Unit\Decorator.Tests.Unit.csproj", "{51D09F53-A84B-41D2-9FDE-9AFED91F872D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory_Simple", "src\Factory_Simple\Factory_Simple.csproj", "{7DA22F53-8B9A-40DB-91D7-AE47136B2675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{51D09F53-A84B-41D2-9FDE-9AFED91F872D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51D09F53-A84B-41D2-9FDE-9AFED91F872D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51D09F53-A84B-41D2-9FDE-9AFED91F872D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA22F53-8B9A-40DB-91D7-AE47136B2675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA22F53-8B9A-40DB-91D7-AE47136B2675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA22F53-8B9A-40DB-91D7-AE47136B2675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA22F53-8B9A-40DB-91D7-AE47136B2675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{B592330F-A594-4714-8CDB-5B1FEA5D45F1} = {F5635A56-3B0C-463F-83D3-5E84B85A5E58}
 		{9C9C832E-3806-47F7-AAC9-378CCB6FF17F} = {57070390-8225-4248-9F14-12AA3D499734}
 		{51D09F53-A84B-41D2-9FDE-9AFED91F872D} = {F5635A56-3B0C-463F-83D3-5E84B85A5E58}
+		{7DA22F53-8B9A-40DB-91D7-AE47136B2675} = {57070390-8225-4248-9F14-12AA3D499734}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {507D5781-CC0B-496C-A33A-9F2BA360AAB8}
