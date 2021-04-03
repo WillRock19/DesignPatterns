@@ -2,18 +2,19 @@
 {
     public class Soy : CondimentDecorator
     {
-        private Beverage _beverage;
-        public override string Description
-        {
-            get => $"{_beverage.Description}, Soy";
-        }
+        private readonly Beverage _beverage;
 
         public Soy(Beverage beverage)
         {
             _beverage = beverage;
         }
 
-        public override double Cost() 
-            => 0.15 + _beverage.Cost();
+        public override decimal Cost() 
+            => 0.15M + _beverage.Cost();
+
+        public override string GetDescription()
+        {
+            return $"{_beverage.GetDescription()}, Soy";
+        }
     }
 }

@@ -7,6 +7,6 @@
             Description = "Expresso";
         }
 
-        public override double Cost() => 1.99;
+        public override decimal Cost() => 1.99M;
     }
 }

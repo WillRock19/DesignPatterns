@@ -2,7 +2,11 @@
 {
     public abstract class Beverage
     {
-        public string Description { get; protected set; }
-        public abstract double Cost();
+        protected string Description { get; set; }
+
+        public virtual string GetDescription() 
+            => Description;
+
+        public abstract decimal Cost();
     }
 }

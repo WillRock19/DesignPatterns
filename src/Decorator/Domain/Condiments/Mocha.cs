@@ -2,17 +2,17 @@
 {
     public class Mocha : CondimentDecorator
     {
-        private Beverage _beverage;
-        public override string Description
-        {
-            get => $"{_beverage.Description}, Mocha";
-        }
+        private readonly Beverage _beverage;
 
         public Mocha(Beverage beverage)
         {
             _beverage = beverage;
         }
 
-        public override double Cost() => 0.20 + _beverage.Cost();
+        public override decimal Cost() 
+            => 0.20M + _beverage.Cost();
+
+        public override string GetDescription() => 
+            $"{_beverage.GetDescription()}, Mocha";
     }
 }

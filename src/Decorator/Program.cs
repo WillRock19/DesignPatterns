@@ -18,13 +18,13 @@ namespace Decorator
             var darkRoast = new Expresso();
             var houseBlend = new Expresso();
 
-            Console.WriteLine($"1. {expresso.Description}");
+            Console.WriteLine($"1. {expresso.GetDescription()}");
             PrintAllPricesForBeverage(expresso);
 
-            Console.WriteLine($"2. {darkRoast.Description}");
+            Console.WriteLine($"2. {darkRoast.GetDescription()}");
             PrintAllPricesForBeverage(darkRoast);
 
-            Console.WriteLine($"3. {houseBlend.Description}");
+            Console.WriteLine($"3. {houseBlend.GetDescription()}");
             PrintAllPricesForBeverage(houseBlend);
         }
 
@@ -40,13 +40,13 @@ namespace Decorator
             var withSoyAndMocha = new Soy(withMocha);
             var withMochaAndWhipAndSoy = new Soy(withMochaAndWhip);
 
-            Console.WriteLine($"-> {withMocha.Description}: {withMocha.Cost()}");
-            Console.WriteLine($"-> {withWhip.Description}: {withWhip.Cost()}");
-            Console.WriteLine($"-> {withMochaAndWhip.Description}: {withMochaAndWhip.Cost()}");
-            Console.WriteLine($"-> {withSoy.Description}: {withSoy.Cost()}");
-            Console.WriteLine($"-> {withSoyAndWhip.Description}: {withSoyAndWhip.Cost()}");
-            Console.WriteLine($"-> {withSoyAndMocha.Description}: {withSoyAndMocha.Cost()}");
-            Console.WriteLine($"-> {withMochaAndWhipAndSoy.Description}: {withMochaAndWhipAndSoy.Cost()}");
+            Console.WriteLine($"-> {withMocha.GetDescription()}: {withMocha.Cost()}");
+            Console.WriteLine($"-> {withWhip.GetDescription()}: {withWhip.Cost()}");
+            Console.WriteLine($"-> {withMochaAndWhip.GetDescription()}: {withMochaAndWhip.Cost()}");
+            Console.WriteLine($"-> {withSoy.GetDescription()}: {withSoy.Cost()}");
+            Console.WriteLine($"-> {withSoyAndWhip.GetDescription()}: {withSoyAndWhip.Cost()}");
+            Console.WriteLine($"-> {withSoyAndMocha.GetDescription()}: {withSoyAndMocha.Cost()}");
+            Console.WriteLine($"-> {withMochaAndWhipAndSoy.GetDescription()}: {withMochaAndWhipAndSoy.Cost()}");
         }
     }
 }

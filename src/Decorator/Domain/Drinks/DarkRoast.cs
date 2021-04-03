@@ -7,6 +7,6 @@
             Description = "Dark Roast Coffee";
         }
 
-        public override double Cost() => 0.99;
+        public override decimal Cost() => 0.99M;
     }
 }

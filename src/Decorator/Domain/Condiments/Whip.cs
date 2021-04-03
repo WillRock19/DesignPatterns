@@ -2,18 +2,17 @@
 {
     public class Whip : CondimentDecorator
     {
-        private Beverage _beverage;
-        public override string Description
-        {
-            get => $"{_beverage.Description}, Whip";
-        }
+        private readonly Beverage _beverage;
 
         public Whip(Beverage beverage)
         {
             _beverage = beverage;
         }
 
-        public override double Cost() 
-            => 0.10 + _beverage.Cost();
+        public override decimal Cost() 
+            => 0.10M + _beverage.Cost();
+
+        public override string GetDescription() =>
+            $"{_beverage.GetDescription()}, Whip";
     }
 }
